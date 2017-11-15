@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+/* start all css with a reset */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Hammersmith One', sans-serif;
+    color: #fff;
+    background: rgba(22, 18, 72, 1);
+    /*background-image: url("images/velvet.jpg");*/
+}
+
+a {
+    color: #ef3c31;
+    border: 5px solid transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 1px solid #fef494;
+}
+
+main {
+    background: -moz-linear-gradient(top, rgba(167, 253, 252, 1) 0%, rgba(98, 95, 132, 1) 58%, rgba(22, 18, 72, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(167, 253, 252, 1)), color-stop(58%, rgba(98, 95, 132, 1)), color-stop(100%, rgba(22, 18, 72, 1)));
+    background: -webkit-linear-gradient(top, rgba(167, 253, 252, 1) 0%, rgba(98, 95, 132, 1) 58%, rgba(22, 18, 72, 1) 100%);
+    background: -o-linear-gradient(top, rgba(167, 253, 252, 1) 0%, rgba(98, 95, 132, 1) 58%, rgba(22, 18, 72, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(167, 253, 252, 1) 0%, rgba(98, 95, 132, 1) 58%, rgba(22, 18, 72, 1) 100%);
+    background: linear-gradient(to bottom, rgba(167, 253, 252, 1) 0%, rgba(98, 95, 132, 1) 58%, rgba(22, 18, 72, 1) 100%);
+    width: 100%;
+}
+
+#mainContainer {
+padding-top:100px;
+margin: auto;
+max-width: 1000px;
+width: 90%;
+}
+
+h1{
+  font-size: 50px;
+  color: #9aa6e7;
+  text-shadow: 2px 2px #2231cc;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.column {
+    float: left;
+    width: 30%;
+    padding: 16px;
+
+}
+
+.cards{
+      background-color: rgba(255, 255, 255, 0.5);
+padding:20px;
+      margin: auto;
+      border-radius: 10px;
+      width: 280px;
+}
+
+.cardimg{
+  width: 280px;
+  cursor: pointer;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ /*Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 1000px) {
+    .column {
+        width: 100%;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    width: 1000px;
+}

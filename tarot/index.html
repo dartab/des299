@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarot Reading</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src='script.js' type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+          <div id="mainContainer">
+
+      <div class="row">
+        <div class="column">
+          <div class="cards">
+          <h1>Past</h1>
+          <img id="myPicture"   onclick="choosePic()" class="cardimg" src="images/default.png">
+        </div>
+        </div>
+
+        <div class="column">
+            <div class="cards">
+          <h1>Present</h1>
+          <img id="myPicture1"  onclick="choosePic1()" class="cardimg" src="images/default.png">
+        </div>
+        </div>
+
+        <div class="column">
+            <div class="cards">
+          <h1>Future</h1>
+          <img id="myPicture2"  onclick="choosePic2()" class="cardimg" src="images/default.png">
+        </div>
+      </div>
+
+
+  <!-- attempt to create expalnations to go with the changing images
+<p id="demo" hover="choosePic()">first card!</p>
+<p id="demo1" hover="choosePic1()">second card!</p>
+<p id="demo2" hover="choosePic1()">third card!</p> -->
+
+<!-- attempt to create a reset -->
+      <!-- <button onclick="startOver()">Start Over</button> -->
+
+</div>
+</div>
+
+    </main>
+
+</body>
+<script>
+var myPix = new Array("images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png", "images/9.png");
+
+function choosePic() {
+  var randomNum = Math.floor(Math.random() * myPix.length);
+  document.getElementById("myPicture").src = myPix[randomNum];
+  // document.getElementById("demo").innerHTML = "Paragraph changed!";
+}
+
+function choosePic1() {
+  var randomNum = Math.floor(Math.random() * myPix.length);
+  document.getElementById("myPicture1").src = myPix[randomNum];
+    // document.getElementById("demo1").innerHTML = "woooooo";
+}
+
+function choosePic2() {
+  var randomNum = Math.floor(Math.random() * myPix.length);
+  document.getElementById("myPicture2").src = myPix[randomNum];
+      // document.getElementById("demo2").innerHTML = "yayyyyyyy";
+}
+
+// function startOver(){
+//     document.getElementsByClassName("cargimg").src = "images/default.png";
+// }
+</script>
+</html>
