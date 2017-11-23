@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>W3 Schools JS Tutorials</title>
+  <link href="style.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">
+  <script src="script.js"></script>
+  <script>
+    function changeParagraphHead() {
+      document.getElementById("headDemo").innerHTML = "Paragraph changed.";
+    }
+  </script>
+
+</head>
+
+</head>
+
+<body>
+
+
+  <main>
+    <h1>JS tutorials</h1>
+
+
+    <article>
+      <h2>Introduction</h2>
+      <div id="subarticle">
+
+        <h3>Changing HTML content</h3>
+        <p id="HTMLdemo">JavaScript can change HTML content.</p>
+        <button type="button" onclick="document.getElementById('HTMLdemo').innerHTML = 'Hello JavaScript!'">Click Me!</button>
+      </div>
+
+      <div id="subarticle">
+        <h3>Changing HTML attributes</h3>
+        <p>In this case JavaScript changes the src (source) attribute of an image.</p>
+        <button onclick="document.getElementById('myImage').src='images/pic_bulbon.gif'">Turn on the light</button>
+        <img id="myImage" src="images/pic_bulboff.gif" style="width:100px">
+        <button onclick="document.getElementById('myImage').src='images/pic_bulboff.gif'">Turn off the light</button>
+      </div>
+
+      <div id="subarticle">
+        <h3>Changing CSS</h3>
+        <p id="styleDemo">JavaScript can change the style of an HTML element.</p>
+        <button type="button" onclick="document.getElementById('styleDemo').style.fontSize='25px'">Click Me!</button>
+      </div>
+
+      <div id="subarticle">
+        <h3>Hiding HTML elements</h3>
+        <p id="hideDemo">JavaScript can hide HTML elements.</p>
+        <button type="button" onclick="document.getElementById('hideDemo').style.display='none'">Click Me!</button>
+      </div>
+
+      <div id="subarticle">
+        <h3>Showing hidden HTML elements</h3>
+        <p id="showDemo" style="display:none">Hello JavaScript!</p>
+        <button type="button" onclick="document.getElementById('showDemo').style.display='block'">Click Me!</button>
+      </div>
+    </article>
+
+
+    <article>
+      <h2>Where to</h2>
+      <div id="subarticle">
+        <h3>JavaScript in body tag</h3>
+        <p id="bodyDemo"></p>
+        <script>
+          document.getElementById("bodyDemo").innerHTML = "This was written with the innerHTML method";
+        </script>
+      </div>
+
+      <div id="subarticle">
+        <h3>JavaScript in header tag</h3>
+        <p id="headDemo">A Paragraph.</p>
+        <button type="button" onclick="changeParagraphHead()">Try it</button>
+      </div>
+
+      <div id="subarticle">
+        <h2>External JavaScript</h2>
+        <p id="externalDemo">A Paragraph.</p>
+        <button type="button" id="changeParagraphExt">Try it</button>
+        <p>changeParagraphExternal() is stored in an external file called "script.js"</p>
+      </div>
+    </article>
+
+
+    <article>
+      <h2>JS output</h2>
+      <div id="subarticle">
+        <h3>Using innerHTML</h3>
+        <p>Here we are going to display data, 5 + 6 =</p>
+        <p id="dataDemo"></p>
+        <script>
+          document.getElementById("dataDemo").innerHTML = 5 + 6;
+        </script>
+      </div>
+
+      <div id="subarticle">
+        <h3>Using window.alert()</h3>
+        <button type="button" onclick='window.alert(5 + 6);'>Click to get the result of 5 + 6!</button>
+      </div>
+
+      <div id="subarticle">
+        <h3>Using console.log()</h3>
+        <p>Inspect the console to see the result of data (5 + 6 = 11)</p>
+        <script>
+          console.log(5 + 6);
+        </script>
+      </div>
+
+    </article>
+
+
+
+
+
+
+  </main>
+
+  <footer>
+    <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> |
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+  </footer>
+
+</body>
+
+</html>
