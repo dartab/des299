@@ -36,15 +36,9 @@
       </div>
 
 
-  <!-- attempt to create expalnations to go with the changing images
-<p id="demo" hover="choosePic()">first card!</p>
-<p id="demo1" hover="choosePic1()">second card!</p>
-<p id="demo2" hover="choosePic1()">third card!</p> -->
-
-<!-- attempt to create a reset -->
-      <!-- <button onclick="startOver()">Start Over</button> -->
 
 </div>
+      <button onclick="startOver()">Start Over</button>
 </div>
 
     </main>
@@ -56,23 +50,22 @@ var myPix = new Array("images/1.png", "images/2.png", "images/3.png", "images/4.
 function choosePic() {
   var randomNum = Math.floor(Math.random() * myPix.length);
   document.getElementById("myPicture").src = myPix[randomNum];
-  // document.getElementById("demo").innerHTML = "Paragraph changed!";
 }
 
 function choosePic1() {
   var randomNum = Math.floor(Math.random() * myPix.length);
   document.getElementById("myPicture1").src = myPix[randomNum];
-    // document.getElementById("demo1").innerHTML = "woooooo";
 }
 
 function choosePic2() {
   var randomNum = Math.floor(Math.random() * myPix.length);
   document.getElementById("myPicture2").src = myPix[randomNum];
-      // document.getElementById("demo2").innerHTML = "yayyyyyyy";
 }
 
-// function startOver(){
-//     document.getElementsByClassName("cargimg").src = "images/default.png";
-// }
+function startOver(){
+document.getElementById('myPicture').src = "images/default.png";
+  document.getElementById('myPicture1').src = "images/default.png";
+  document.getElementById('myPicture2').src = "images/default.png";
+}
 </script>
 </html>
