@@ -18,6 +18,7 @@
           <div class="cards">
           <h1>Past</h1>
           <img id="myPicture"   onclick="choosePic()" class="cardimg" src="images/default.png">
+          <p id="myText">hi</p>
         </div>
         </div>
 
@@ -46,10 +47,12 @@
 </body>
 <script>
 var myPix = new Array("images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png", "images/9.png");
+var text1array = ["text for img1", "text for img2", "text for img3", "text for img4", "text for img5", "text for img6", "text for img7", "text for img8", "text for img9"];
 
 function choosePic() {
   var randomNum = Math.floor(Math.random() * myPix.length);
   document.getElementById("myPicture").src = myPix[randomNum];
+  document.getElementById("myText").innerHTML = text1array[randomNum];
 }
 
 function choosePic1() {
