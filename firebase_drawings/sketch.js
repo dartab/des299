@@ -37,7 +37,6 @@ function setup() {
   var ref = database.ref('drawings');
   ref.on('value', gotData, errData);
 }
-
 function startPath() {
   isDrawing = true;
   currentPath = [];
@@ -124,7 +123,7 @@ function showDrawing(key) {
 }
 
   var ref = database.ref('drawings/' + key);
-  ref.once('value', oneDrawing, errData);
+  ref.on('value', oneDrawing, errData);
 
   function oneDrawing(data) {
     var dbdrawing = data.val();

@@ -34,7 +34,7 @@ function setup() {
     storageBucket: "my-project-2d7e4.appspot.com",
     messagingSenderId: "339604456383"
   };
-  
+
   firebase.initializeApp(config);
   database = firebase.database();
 
