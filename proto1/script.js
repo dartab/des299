@@ -81,4 +81,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
         symptom.src = 'images/symptom-bw.png';
     });
 
+
 });
