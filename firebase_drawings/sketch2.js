@@ -1,19 +1,31 @@
-// A2Z F16
 // Daniel Shiffman
-// http://shiffman.net/a2z
-// https://github.com/shiffman/A2Z-F16
-
-// Get input from user
-var points = [];
-
-// Keep list of DOM elements for clearing later when reloading
-var listItems = [];
+// http://codingtra.in
+// http://patreon.com/codingtrain
+// Code for: https://youtu.be/RUSvMxxm_Jo
 
 var database;
 
-function setup() {
+var drawing = [];
+var currentPath = [];
+var isDrawing = false;
 
-  // Start Firebase
+function setup() {
+  canvas = createCanvas(200, 200);
+
+
+
+  canvas.mousePressed(startPath);
+  canvas.parent('canvascontainer');
+  canvas.mouseReleased(endPath);
+
+  var saveButton = select('#saveButton');
+  saveButton.mousePressed(saveDrawing);
+
+  var clearButton = select('#clearButton');
+  clearButton.mousePressed(clearDrawing);
+
+
+
   var config = {
     apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
     authDomain: "my-project-2d7e4.firebaseapp.com",
@@ -25,142 +37,118 @@ function setup() {
   firebase.initializeApp(config);
   database = firebase.database();
 
-  loadAll();
-
   var params = getURLParams();
+  console.log(params);
   if (params.id) {
-    loadOne(params.id);
+    console.log(params.id);
+    showDrawing(params.id);
   }
 
-  var canvas = createCanvas(300, 300);
-  canvas.parent('canvas');
 
-  canvas.mousePressed(startDrawing);
-  canvas.mouseReleased(endDrawing);
+  var ref = database.ref('drawings');
+  ref.on('value', gotData, errData);
 }
 
-function startDrawing() {
-  // Empty array
-  points = [];
+function startPath() {
+  isDrawing = true;
+  currentPath = [];
+  drawing.push(currentPath);
 }
 
-// Put points in the array
-function mouseDragged() {
-  var p = {
-    x: mouseX,
-    y: mouseY
-  }
-  points.push(p);
+function endPath() {
+  isDrawing = false;
 }
-
-// Finished send data!
-function endDrawing() {
-  sendFirebase();
-}
-
 
 function draw() {
   background(0);
-  noFill();
+
+  if (isDrawing) {
+    var point = {
+      x: mouseX,
+      y: mouseY
+    }
+    currentPath.push(point);
+  }
+
   stroke(255);
   strokeWeight(4);
-  beginShape();
-  for (var i = 0; i < points.length; i++) {
-    vertex(points[i].x, points[i].y);
-  }
-  endShape();
-}
-
-function clearList() {
-  for (var i = 0; i < listItems.length; i++) {
-    listItems[i].remove();
-  }
-}
-
-function loadAll() {
-  var ref = database.ref("drawings");
-  ref.on("value", gotAll, errData);
-  // The data comes back as an object
-
-  function gotAll(data) {
-    var drawings = data.val();
-    // Grab all the keys to iterate over the object
-    var keys = Object.keys(drawings);
-    // Loop through array
-    clearList();
-    for (var i = 0; i < keys.length; i++) {
-      // The data for each record is in a property attributes
-      // But here I'm just making a list with "id"
-      addDrawing(keys[i]);
+  noFill();
+  for (var i = 0; i < drawing.length; i++) {
+    var path = drawing[i];
+    beginShape();
+    for (var j = 0; j < path.length; j++) {
+      vertex(path[j].x, path[j].y)
     }
+    endShape();
   }
 
-  function errData(error) {
-    console.log("Something went wrong.");
-    console.log(error);
-  }
+
 }
 
 
-function loadOne(id) {
-  var ref = database.ref("drawings/" + id);
-  ref.on("value", gotOne, errData);
-
-  function errData(error) {
-    console.log("Something went wrong.");
-    console.log(error);
-  }
-
-  function gotOne(data) {
-    points = data.val().path;
-  }
-}
-
-
-// This is a function for sending data
-function sendFirebase() {
-
-  var drawings = database.ref('drawings');
-
-  // Has to be an object!
+function saveDrawing() {
+  var ref = database.ref('drawings');
   var data = {
-    path: points
-  };
+    name: "Dan",
+    drawing: drawing
+  }
+  var result = ref.push(data, dataSent);
+  console.log(result.key);
 
-  var drawing = drawings.push(data, finished);
-  console.log("Firebase generated key: " + drawing.key);
-
-  // Reload the data for the page
-  function finished(err) {
-    if (err) {
-      console.log("ooops, something went wrong.");
-      console.log(err);
-    } else {
-      console.log('Data saved successfully');
-      // We can use the keys to make a "permalink" to this sketch
-      //addDrawing(drawing.key);
-    }
+  function dataSent(err, status) {
+    console.log(status);
   }
 }
 
-function addDrawing(id) {
-  var li = createElement('li', '');
-  var a1 = createA('#', id);
-  loadDrawing(a1, id);
-  var dash = createSpan(' — ');
-  var a2 = createA('?id=' + id, 'permalink');
-  a1.parent(li);
-  dash.parent(li);
-  a2.parent(li);
-  li.parent('drawings');
-  listItems.push(li);
-  console.log('adding ' + id);
+function gotData(data) {
+
+  // clear the listing
+  var elts = selectAll('.listing');
+  for (var i = 0; i < elts.length; i++) {
+    elts[i].remove();
+  }
+
+  var drawings = data.val();
+  var keys = Object.keys(drawings);
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    //console.log(key);
+    var li = createElement('li', '');
+    li.class('listing');
+    var ahref = createA('#', key);
+    ahref.mousePressed(showDrawing);
+    ahref.parent(li);
+
+    var perma = createA('?id=' + key, 'permalink');
+    perma.parent(li);
+    perma.style('padding', '4px');
+
+    li.parent('drawinglist');
+  }
 }
 
-function loadDrawing(link, id) {
-  link.mousePressed(requestDrawing);
+function errData(err) {
+  console.log(err);
+}
 
-  function requestDrawing() {
-    loadOne(id);
+function showDrawing(key) {
+  //console.log(arguments);
+  if (key instanceof MouseEvent) {
+    key = this.html();
   }
+
+  var ref = database.ref('drawings/' + key);
+  ref.once('value', oneDrawing, errData);
+
+  function oneDrawing(data) {
+    var dbdrawing = data.val();
+    drawing = dbdrawing.drawing;
+    //console.log(drawing);
+  }
+
+}
+
+
+function clearDrawing() {
+  drawing = [];
 }
