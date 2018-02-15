@@ -19,7 +19,7 @@ function setup() {
     authDomain: "my-project-2d7e4.firebaseapp.com",
     databaseURL: "https://my-project-2d7e4.firebaseio.com",
     projectId: "my-project-2d7e4",
-    storageBucket: "",
+    storageBucket: "my-project-2d7e4.appspot.com",
     messagingSenderId: "339604456383"
   };
   firebase.initializeApp(config);
