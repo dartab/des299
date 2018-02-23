@@ -9,19 +9,19 @@
 }
 
 body {
-  cursor: url(images/cursor_small.png), auto;
+  cursor: url(images/cursor_small.png) 16 35, auto;
   background-color: #000;
   background-image: url(images/stars.gif);
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   color: #fff;
-  margin-top: -30px;
-  margin-left: -10px;
-  transform: scale(.9);
+  /* margin-top: -30px;
+  margin-left: -10px; */
+  /* transform: scale(.88); */
 }
 
 body:active {
-  cursor: url(images/cursor_inverse.png), auto;
+  cursor: url(images/cursor_inverse.png) 16 35, auto;
 }
 
 .outer {
@@ -29,6 +29,13 @@ body:active {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.verticalcenter{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%)
 }
 
 .middle {
@@ -45,17 +52,21 @@ body:active {
 
 a {
   color: #ef3c31;
-  border: 5px solid transparent;
-  text-decoration: none;
+    cursor: url(images/cursor_hover.png) 16 35, auto;
+  /* border: 5px solid transparent;
+  text-decoration: none; */  }
+
+  a:active {
+    cursor: url(images/cursor_small.png) 16 35, auto;
+
 }
 
 a:hover {
-  background-color: #fef494;
+  cursor: url(images/cursor_hover.png) 16 35, auto;
 }
 
 a:active {
-  cursor: url(images/cursor.png), auto;
-}
+cursor: url(images/cursor_inverse.png) 16 35, auto;}
 
 #main {
   /* pointer-events: none; */
@@ -92,15 +103,15 @@ a:active {
 }
 
 aside {
+  z-index: 100;
   color: #000;
   font-size: 20px;
   position: absolute;
   top: 230px;
   left: 20px;
   width: 900px;
-  height: 500px;
+  height: 530px;
   background-color: rgba(255, 255, 255, 0.5);
-  display: none;
   border-bottom: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid white;
@@ -121,6 +132,20 @@ aside {
   text-align: center;
 }
 
+.tab1 {
+  position: absolute;
+  top: -70px;
+  left: 303px;
+  width: 300px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-radius: 25px 25px 0px 0px;
+  text-align: center;
+}
+
 .line {
   position: absolute;
   top: 0px;
@@ -131,8 +156,12 @@ aside {
   border-radius: 0px 25px 25px 25px;
 }
 
-p.tabtext {
-    font-family: 'Inconsolata', monospace;
+.tabtext a{
+ color:#000;
+}
+
+.tabtext {
+  font-family: 'Inconsolata', monospace;
   margin-top: 20px;
   font-weight: 700;
   font-size: 30px;
@@ -147,8 +176,42 @@ p.tabtext {
   -o-transform: skew(-10deg);
 }
 
+.tabtextbehind a{
+ color:#000;
+}
+
+.tabtextbehind {
+  font-family: 'Inconsolata', monospace;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(184, 153, 47, 0.9);
+  -webkit-transform: skew(-10deg);
+  -moz-transform: skew(-10deg);
+  -o-transform: skew(-10deg);
+}
+
+.closetext {
+  font-family: 'Inconsolata', monospace;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 0px 0px 5px 5px;
+  padding: 5px;
+  width: 830px;
+  margin-left: -20px;
+  background-color: rgba(228, 226, 59, 0.9);
+  text-align: center;
+  display: block;
+}
+
 .content {
-  height:400px;
+  height:390px;
   font-size: 16px;
   line-height: 24px;
   position: relative;
@@ -158,7 +221,7 @@ p.tabtext {
   padding: 20px;
   text-align: left;
   background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 p{
@@ -197,9 +260,4 @@ footer {
   margin-right: auto;
   margin-top: 20px;
   width: 1000px;
-}
-
-#close{
-  width: 100%;
-  height: 100%;
 }

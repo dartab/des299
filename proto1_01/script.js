@@ -18,18 +18,18 @@
        current.src = 'images/current-bw.png';
      });
 
-     // click on current for info box
-     current.addEventListener('click', function() {
-       aboutcurrent.style.display = "block";
-     });
-
-     // current info box that displays on click
-     document.getElementById('aboutcurrent');
-     var close = document.getElementById('close');
-
-     close.addEventListener('click', function() {
-       aboutcurrent.style.display = "none";
-     });
+     // // click on current for info box
+     // current.addEventListener('click', function() {
+     //   aboutcurrent.style.display = "block";
+     // });
+     //
+     // // current info box that displays on click
+     // document.getElementById('aboutcurrent');
+     // var close = document.getElementById('close');
+     //
+     // close.addEventListener('click', function() {
+     //   aboutcurrent.style.display = "none";
+     // });
 
 
 

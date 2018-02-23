@@ -9,7 +9,7 @@
 }
 
 body {
-  cursor: url(images/cursor_small.png), auto;
+  cursor: url(images/cursor_small.png) 16 35, auto;
   background-color: #000;
   background-image: url(images/stars.gif);
   font-size: 16px;
@@ -17,11 +17,11 @@ body {
   color: #fff;
   margin-top: -30px;
   margin-left: -10px;
-  transform: scale(.9);
+  transform: scale(.88);
 }
 
 body:active {
-  cursor: url(images/cursor_inverse.png), auto;
+  cursor: url(images/cursor_inverse.png) 16 35, auto;
 }
 
 .outer {
@@ -50,12 +50,12 @@ a {
 }
 
 a:hover {
-  background-color: #fef494;
+  cursor: url(images/cursor_small.png) 16 35, auto;
 }
 
 a:active {
-  cursor: url(images/cursor.png), auto;
-}
+cursor: url(images/cursor_inverse.png) 16 35, auto;}
+
 
 #main {
   /* pointer-events: none; */
@@ -92,6 +92,7 @@ a:active {
 }
 
 aside {
+  z-index: 100;
   color: #000;
   font-size: 20px;
   position: absolute;
@@ -100,7 +101,6 @@ aside {
   width: 900px;
   height: 500px;
   background-color: rgba(255, 255, 255, 0.5);
-  display: none;
   border-bottom: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid white;
@@ -197,9 +197,4 @@ footer {
   margin-right: auto;
   margin-top: 20px;
   width: 1000px;
-}
-
-#close{
-  width: 100%;
-  height: 100%;
 }
