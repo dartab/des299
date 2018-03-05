@@ -1,8 +1,13 @@
 // JavaScript Document
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM fully loaded and parsed");
+$(document).ready(function(){
+    var outerContentWidth = $('#viewContainer').width();
+    var scrollPosition = $('.page').width()*2;
+    $('.abc').scrollLeft(scrollPosition);
+    
 
-    // all other js here
+document.addEventListener("DOMContentLoaded", function() {
+
+
 
 });

@@ -14,7 +14,6 @@ body {
   background-image: url(images/stars.gif);
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
   /* margin-top: -30px;
   margin-left: -10px; */
   /* transform: scale(.88); */
@@ -157,11 +156,13 @@ aside {
 }
 
 .tabtext a{
- color:#000;
+ color:#fff;
+ text-shadow: 2px 2px #000;
 }
 
 .tabtext {
   font-family: 'Inconsolata', monospace;
+  color:#fff;
   margin-top: 20px;
   font-weight: 700;
   font-size: 30px;
@@ -177,7 +178,8 @@ aside {
 }
 
 .tabtextbehind a{
- color:#000;
+ color:#fff;
+ text-shadow: 2px 2px #000;
 }
 
 .tabtextbehind {
@@ -237,7 +239,9 @@ p{
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 24px;
+ color: #2FB847;
+  text-shadow: 2px 2px #fff;
 }
 
 h5 {
