@@ -9,6 +9,17 @@ var drawing = [];
 var currentPath = [];
 var isDrawing = false;
 
+var config = {
+  apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
+  authDomain: "my-project-2d7e4.firebaseapp.com",
+  databaseURL: "https://my-project-2d7e4.firebaseio.com",
+  projectId: "my-project-2d7e4",
+  storageBucket: "my-project-2d7e4.appspot.com",
+  messagingSenderId: "339604456383"
+};
+firebase.initializeApp(config);
+database = firebase.database();
+
 var s = function(p) {
   console.log("s");
 
@@ -24,18 +35,6 @@ var s = function(p) {
 
     var clearButton = p.select('#clearButton');
     clearButton.mousePressed(clearDrawing);
-
-    var config = {
-      apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
-      authDomain: "my-project-2d7e4.firebaseapp.com",
-      databaseURL: "https://my-project-2d7e4.firebaseio.com",
-      projectId: "my-project-2d7e4",
-      storageBucket: "my-project-2d7e4.appspot.com",
-      messagingSenderId: "339604456383"
-    };
-
-    firebase.initializeApp(config);
-    database = firebase.database();
 
     var params = p.getURLParams();
     console.log(params);
