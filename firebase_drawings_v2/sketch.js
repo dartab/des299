@@ -5,10 +5,6 @@
 
 var database;
 
-var drawing = [];
-var currentPath = [];
-var isDrawing = false;
-
 var config = {
   apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
   authDomain: "my-project-2d7e4.firebaseapp.com",
@@ -22,6 +18,9 @@ database = firebase.database();
 
 var s = function(p) {
   console.log("s");
+  var drawing = [];
+  var currentPath = [];
+  var isDrawing = false;
 
   p.setup = function() {
     canvas = p.createCanvas(200, 200);
