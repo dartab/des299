@@ -17,7 +17,6 @@ firebase.initializeApp(config);
 database = firebase.database();
 
 var s = function(p) {
-  console.log("s");
   var drawing = [];
   var currentPath = [];
   var isDrawing = false;
@@ -70,7 +69,6 @@ var s = function(p) {
     }
   }
 
-
   p.startPath = function() {
     isDrawing = true;
     currentPath = [];
@@ -80,7 +78,6 @@ var s = function(p) {
   function endPath() {
     isDrawing = false;
   }
-
 
   p.saveDrawing = function() {
     var ref = database.ref('drawings');
@@ -141,13 +138,11 @@ var s = function(p) {
       drawing = dbdrawing.drawing;
       //console.log(drawing);
     }
-
   }
 
   function clearDrawing() {
     drawing = [];
   }
-
 };
 
 var myp5 = new p5(s, 'canvascontainer');
