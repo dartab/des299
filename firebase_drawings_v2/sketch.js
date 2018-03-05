@@ -5,12 +5,21 @@
 
 var database;
 
-var drawing = [];
-var currentPath = [];
-var isDrawing = false;
+var config = {
+  apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
+  authDomain: "my-project-2d7e4.firebaseapp.com",
+  databaseURL: "https://my-project-2d7e4.firebaseio.com",
+  projectId: "my-project-2d7e4",
+  storageBucket: "my-project-2d7e4.appspot.com",
+  messagingSenderId: "339604456383"
+};
+firebase.initializeApp(config);
+database = firebase.database();
 
 var s = function(p) {
-  console.log("s");
+  var drawing = [];
+  var currentPath = [];
+  var isDrawing = false;
 
   p.setup = function() {
     canvas = p.createCanvas(200, 200);
@@ -24,18 +33,6 @@ var s = function(p) {
 
     var clearButton = p.select('#clearButton');
     clearButton.mousePressed(clearDrawing);
-
-    var config = {
-      apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
-      authDomain: "my-project-2d7e4.firebaseapp.com",
-      databaseURL: "https://my-project-2d7e4.firebaseio.com",
-      projectId: "my-project-2d7e4",
-      storageBucket: "my-project-2d7e4.appspot.com",
-      messagingSenderId: "339604456383"
-    };
-
-    firebase.initializeApp(config);
-    database = firebase.database();
 
     var params = p.getURLParams();
     console.log(params);
@@ -72,7 +69,6 @@ var s = function(p) {
     }
   }
 
-
   p.startPath = function() {
     isDrawing = true;
     currentPath = [];
@@ -82,7 +78,6 @@ var s = function(p) {
   function endPath() {
     isDrawing = false;
   }
-
 
   p.saveDrawing = function() {
     var ref = database.ref('drawings');
@@ -143,13 +138,11 @@ var s = function(p) {
       drawing = dbdrawing.drawing;
       //console.log(drawing);
     }
-
   }
 
   function clearDrawing() {
     drawing = [];
   }
-
 };
 
 var myp5 = new p5(s, 'canvascontainer');
