@@ -34,6 +34,9 @@ var s = function(p) {
     var clearButton = p.select('#clearButton');
     clearButton.mousePressed(clearDrawing);
 
+    var clearDrawingsButton = p.select('#clearDrawingButton');
+    clearDrawingsButton.mousePressed(clearDrawingList);
+
     var params = p.getURLParams();
     console.log(params);
     if (params.id) {
@@ -91,6 +94,7 @@ var s = function(p) {
     function dataSent(err, status) {
       console.log(status);
     }
+    drawing = [];
   }
 
   p.gotData = function(data) {
@@ -142,6 +146,10 @@ var s = function(p) {
 
   function clearDrawing() {
     drawing = [];
+  }
+
+  function clearDrawingList() {
+    drawinglist.remove();
   }
 };
 
