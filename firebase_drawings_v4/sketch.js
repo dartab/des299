@@ -13,6 +13,7 @@ var config = {
   storageBucket: "my-project-2d7e4.appspot.com",
   messagingSenderId: "339604456383"
 };
+
 firebase.initializeApp(config);
 database = firebase.database();
 
@@ -186,4 +187,26 @@ var t = function(p) {
 };
 
 var myp5 = new p5(s, 'canvascontainer');
-// new p5(t, 'canvascontainer');
+new p5(t, 'canvascontainer');
+
+ref.on('value', function(snapshot){
+
+  var data = snapshot.val();
+
+  .then(function showDrawing(key) {
+    //console.log(arguments);
+    if (key instanceof MouseEvent) {
+      key = this.html();
+    }
+    //
+    // var ref = database.ref('drawings/' + key);
+    // ref.once('value', oneDrawing, errData);
+
+    .then(function oneDrawing(data) {
+      var dbdrawing = data.val();
+      drawing = dbdrawing.drawing;
+      //console.log(drawing);
+    }
+
+//   }
+// });
