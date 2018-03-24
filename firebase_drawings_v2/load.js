@@ -156,6 +156,9 @@ database = firebase.database();
 //   // }
 // };
 
+
+// this variable contains the empty canvas in which all drawings will populate
+
 var t = function(p) {
   var drawing = [];
 
@@ -187,10 +190,14 @@ var t = function(p) {
 // var myp5 = new p5(s, 'canvascontainer');
 // new p5(t, 'canvascontainer');
 
+
+
+//refers to database to get drawings
 var ref = database.ref('drawings');
 // Loads all sketches in a crude way, refreshing all
 // ref.on('value', gotData, errData);
 // Loads all sketches a bit more elegantly, one by one
+// snapshot contains a single item
 ref.on('child_added', function(snapshot) {
   console.log(snapshot, snapshot.key, snapshot.val());
   showDrawing(snapshot.key);
@@ -229,18 +236,36 @@ function gotData(data) {
 function showDrawing(key) {
   //console.log(arguments);
 
+  // getting drawings from the database
   var ref = database.ref('drawings/' + key);
   ref.once('value', oneDrawing, errData);
 
   function oneDrawing(data) {
     var dbdrawing = data.val();
     // drawing = dbdrawing.drawing;
-    var newp5 = new p5(t, 'canvascontainer');
-    newp5.canvas.classList.add('p5sketch');
+
+    var canvasContainer = document.getElementById('canvascontainer');
+
+    // create a container that is attached to the id canvascontainer
+    var newDiv = document.createElement('div'); // makes a <div>
+    newDiv.classList.add('p5sketch'); // gives it a class
+    newDiv.style.display = 'inline-block';
+
+    // canvas element is prepended to the container variable
+    canvasContainer.prepend(newDiv); // insert div at the beginning
+
+    // sketch newp5 is created in the container
+    var newp5 = new p5(t, newDiv); // insert new p5 in that div
+
+    //class name is p5sketch
+    // newp5.canvas.classList.add('p5sketch');
+
     newp5.setDrawing(dbdrawing.drawing);
     //console.log(drawing);
   }
 }
+
+
 
 function errData(err) {
   console.log(err);

@@ -16,6 +16,7 @@ var config = {
 firebase.initializeApp(config);
 database = firebase.database();
 
+// empty canvas in which to draw
 var s = function(p) {
   var drawing = [];
   var currentPath = [];
@@ -48,6 +49,8 @@ var s = function(p) {
     ref.on('value', p.gotData, errData);
   }
 
+
+//drawing function
   p.draw = function() {
     p.background(0);
 
@@ -84,6 +87,8 @@ var s = function(p) {
     isDrawing = false;
   }
 
+
+// saves drawing into the database
   p.saveDrawing = function() {
     var ref = database.ref('drawings');
     var data = {
@@ -99,30 +104,34 @@ var s = function(p) {
     drawing = [];
   }
 
+//puts drawings into the listing
   p.gotData = function(data) {
 
     // clear the listing
-    var elts = p.selectAll('.listing');
-    for (var i = 0; i < elts.length; i++) {
-      elts[i].remove();
-    }
+    // var elts = p.selectAll('.listing');
+    // for (var i = 0; i < elts.length; i++) {
+    //   elts[i].remove();
+    // }
 
     var drawings = data.val();
     var keys = Object.keys(drawings);
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
       //console.log(key);
-      var li = p.createElement('li', '');
-      li.class('listing');
-      var ahref = p.createA('#', key);
-      ahref.mousePressed(p.showDrawing);
-      ahref.parent(li);
 
-      var perma = p.createA('?id=' + key, 'permalink');
-      perma.parent(li);
-      perma.style('padding', '4px');
+      // commented out the listing
 
-      li.parent('drawinglist');
+      // var li = p.createElement('li', '');
+      // li.class('listing');
+      // var ahref = p.createA('#', key);
+      // ahref.mousePressed(p.showDrawing);
+      // ahref.parent(li);
+      //
+      // var perma = p.createA('?id=' + key, 'permalink');
+      // perma.parent(li);
+      // perma.style('padding', '4px');
+      //
+      // li.parent('drawinglist');
     }
   }
 

@@ -5,24 +5,23 @@
 
 var database;
 
-var drawing = [];
-var currentPath = [];
-var isDrawing = false;
+var config = {
+  apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
+  authDomain: "my-project-2d7e4.firebaseapp.com",
+  databaseURL: "https://my-project-2d7e4.firebaseio.com",
+  projectId: "my-project-2d7e4",
+  storageBucket: "my-project-2d7e4.appspot.com",
+  messagingSenderId: "339604456383"
+};
 
-function setup(){
-    var config = {
-      apiKey: "AIzaSyAiTnVJ8-WOMf3RXemEAW7eS_zjpwCYWmM",
-      authDomain: "my-project-2d7e4.firebaseapp.com",
-      databaseURL: "https://my-project-2d7e4.firebaseio.com",
-      projectId: "my-project-2d7e4",
-      storageBucket: "my-project-2d7e4.appspot.com",
-      messagingSenderId: "339604456383"
-    };
-    firebase.initializeApp(config);
-}
+firebase.initializeApp(config);
+database = firebase.database();
 
+// empty canvas in which to draw
 var s = function(p) {
-  console.log("s");
+  var drawing = [];
+  var currentPath = [];
+  var isDrawing = false;
 
   p.setup = function() {
     canvas = p.createCanvas(200, 200);
@@ -37,6 +36,8 @@ var s = function(p) {
     var clearButton = p.select('#clearButton');
     clearButton.mousePressed(clearDrawing);
 
+    // var clearDrawingsButton = p.select('#clearDrawingButton');
+    // clearDrawingsButton.mousePressed(clearDrawingList);
 
     var params = p.getURLParams();
     console.log(params);
@@ -45,11 +46,12 @@ var s = function(p) {
       p.showDrawing(params.id);
     }
 
-    p.database = firebase.database();
-    var ref = p.database.ref('drawings');
+    var ref = database.ref('drawings');
     ref.on('value', p.gotData, errData);
   }
 
+
+//drawing function
   p.draw = function() {
     p.background(0);
 
@@ -59,6 +61,7 @@ var s = function(p) {
         y: p.mouseY
       }
       currentPath.push(point);
+      p.print(currentPath.length, drawing.length, currentPath, drawing);
     }
 
     p.stroke(255);
@@ -72,8 +75,8 @@ var s = function(p) {
       }
       p.endShape();
     }
-  }
 
+  }
 
   p.startPath = function() {
     isDrawing = true;
@@ -86,10 +89,11 @@ var s = function(p) {
   }
 
 
+// saves drawing into the database
   p.saveDrawing = function() {
-    var ref = p.database.ref('drawings');
+    var ref = database.ref('drawings');
     var data = {
-      name: "Dan",
+      // name: "Dan",
       drawing: drawing
     }
     var result = ref.push(data, dataSent);
@@ -98,32 +102,37 @@ var s = function(p) {
     function dataSent(err, status) {
       console.log(status);
     }
+    drawing = [];
   }
 
+//puts drawings into the listing
   p.gotData = function(data) {
 
     // clear the listing
-    var elts = p.selectAll('.listing');
-    for (var i = 0; i < elts.length; i++) {
-      elts[i].remove();
-    }
+    // var elts = p.selectAll('.listing');
+    // for (var i = 0; i < elts.length; i++) {
+    //   elts[i].remove();
+    // }
 
     var drawings = data.val();
     var keys = Object.keys(drawings);
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
       //console.log(key);
-      var li = p.createElement('li', '');
-      li.class('listing');
-      var ahref = p.createA('#', key);
-      ahref.mousePressed(p.showDrawing);
-      ahref.parent(li);
 
-      var perma = p.createA('?id=' + key, 'permalink');
-      perma.parent(li);
-      perma.style('padding', '4px');
+      // commented out the listing
 
-      li.parent('drawinglist');
+      // var li = p.createElement('li', '');
+      // li.class('listing');
+      // var ahref = p.createA('#', key);
+      // ahref.mousePressed(p.showDrawing);
+      // ahref.parent(li);
+      //
+      // var perma = p.createA('?id=' + key, 'permalink');
+      // perma.parent(li);
+      // perma.style('padding', '4px');
+      //
+      // li.parent('drawinglist');
     }
   }
 
@@ -137,22 +146,54 @@ var s = function(p) {
       key = this.html();
     }
 
-    var ref = p.database.ref('drawings/' + key);
+    var ref = database.ref('drawings/' + key);
     ref.once('value', oneDrawing, errData);
 
     function oneDrawing(data) {
       var dbdrawing = data.val();
-      drawing = dbdrawing.drawing;
+      // drawing = dbdrawing.drawing;
+      var newp5 = new p5(t);
+      newp5.setDrawing(dbdrawing.drawing);
       //console.log(drawing);
     }
-
   }
 
   function clearDrawing() {
     drawing = [];
   }
 
+  // function clearDrawingList() {
+  //   drawinglist.remove();
+  // }
+};
+
+var t = function(p) {
+  var drawing = [];
+
+  p.setup = function() {
+    canvas = p.createCanvas(200, 200);
+    canvas.parent('canvascontainer');
+  }
+
+  p.draw = function() {
+    p.background(0);
+    p.stroke(255);
+    p.strokeWeight(4);
+    p.noFill();
+    for (var i = 0; i < drawing.length; i++) {
+      var path = drawing[i];
+      p.beginShape();
+      for (var j = 0; j < path.length; j++) {
+        p.vertex(path[j].x, path[j].y)
+      }
+      p.endShape();
+    }
+  }
+
+  p.setDrawing = function(newDrawing) {
+    drawing = newDrawing;
+  }
 };
 
 var myp5 = new p5(s, 'canvascontainer');
-var myp5_2 = new p5(s, 'canvascontainer');
+// new p5(t, 'canvascontainer');

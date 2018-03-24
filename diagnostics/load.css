@@ -1,0 +1,67 @@
+/* how to prevent scrollbar? maybe only on FF */
+
+html {
+  margin: auto;
+}
+
+body {
+  /* Location of the image */
+  background-image: url("images/bg.png");
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+
+header{
+  text-align: center;
+  margin: 3rem;
+}
+
+.responsive {
+    width: 100%;
+    max-width: 1700px;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(206, 59, 149, 0.3);
+    box-shadow: 0 0 200px rgba(206, 59, 149, 0.7);
+    border-radius: 20px;
+}
+
+section{
+  margin: auto;
+  padding-left: 100px;
+  max-width: 80vw;
+}
+
+h1{
+  font-family: 'Inconsolata', monospace;
+  color:#fff;
+  text-shadow: 0 0 10px #ce3895, 0 0 20px #0000FF;
+}
+
+
+canvas {
+  margin: 40px;
+  box-shadow: 0 0 200px rgba(87, 234, 206, 0.8);
+  border-radius: 10px;
+}
+
+#canvascontainer{
+}
+
+/* note that a gap appears in between the canvas elements since they are inline replaced elements */
