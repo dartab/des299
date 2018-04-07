@@ -14,18 +14,14 @@ body {
   background-image: url(images/stars.gif);
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  /* margin-top: -30px;
-  margin-left: -10px; */
-  /* transform: scale(.88); */
+  color: #fff;
+  margin-top: -30px;
+  margin-left: -10px;
+  transform: scale(.88);
 }
 
 body:active {
   cursor: url(images/cursor_inverse.png) 16 35, auto;
-}
-
-.responsive {
-    width: 100%;
-    height: auto;
 }
 
 .outer {
@@ -33,13 +29,6 @@ body:active {
   position: absolute;
   height: 100%;
   width: 100%;
-}
-
-.verticalcenter{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%)
 }
 
 .middle {
@@ -136,20 +125,6 @@ aside {
   text-align: center;
 }
 
-.tab1 {
-  position: absolute;
-  top: -70px;
-  left: 303px;
-  width: 300px;
-  height: 70px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  border-radius: 25px 25px 0px 0px;
-  text-align: center;
-}
-
 .line {
   position: absolute;
   top: 0px;
@@ -160,14 +135,8 @@ aside {
   border-radius: 0px 25px 25px 25px;
 }
 
-.tabtext a{
- color:#fff;
- text-shadow: 2px 2px #000;
-}
-
-.tabtext {
+p.tabtext {
   font-family: 'Inconsolata', monospace;
-  color:#fff;
   margin-top: 20px;
   font-weight: 700;
   font-size: 30px;
@@ -177,27 +146,6 @@ aside {
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(228, 226, 59, 0.9);
-  -webkit-transform: skew(-10deg);
-  -moz-transform: skew(-10deg);
-  -o-transform: skew(-10deg);
-}
-
-.tabtextbehind a{
- color:#fff;
- text-shadow: 2px 2px #000;
-}
-
-.tabtextbehind {
-  font-family: 'Inconsolata', monospace;
-  margin-top: 20px;
-  font-weight: 700;
-  font-size: 30px;
-  border-radius: 5px;
-  padding: 5px;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgba(184, 153, 47, 0.9);
   -webkit-transform: skew(-10deg);
   -moz-transform: skew(-10deg);
   -o-transform: skew(-10deg);
@@ -214,7 +162,7 @@ aside {
   margin-left: -20px;
   background-color: rgba(228, 226, 59, 0.9);
   text-align: center;
-  display: block;
+    display:block;
 }
 
 .content {
@@ -244,9 +192,7 @@ p{
 }
 
 h4 {
-  font-size: 24px;
- color: #2FB847;
-  text-shadow: 2px 2px #fff;
+  font-size: 18px;
 }
 
 h5 {

@@ -11,12 +11,10 @@
 body {
   cursor: url(images/cursor_small.png) 16 35, auto;
   background-color: #000;
-  background-image: url(images/stars.gif);
+  background-image: url(images/gifs/stars.gif);
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  /* margin-top: -30px;
-  margin-left: -10px; */
-  /* transform: scale(.88); */
+  text-align: center;
 }
 
 body:active {
@@ -24,8 +22,27 @@ body:active {
 }
 
 .responsive {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  max-width: 1800px;
+  height: auto;
+}
+
+.responsive_icon {
+  max-width: 100%;
+  max-height: 80%
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  padding-top: 3rem;
+  padding-bottom: .5rem;
+}
+
+.responsive_title {
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
 }
 
 .outer {
@@ -35,11 +52,11 @@ body:active {
   width: 100%;
 }
 
-.verticalcenter{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%)
+.verticalcenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }
 
 .middle {
@@ -51,18 +68,18 @@ transform: translate(-50%, -50%)
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 900px;
+  width: 90vw;
 }
 
 a {
   color: #ef3c31;
-    cursor: url(images/cursor_hover.png) 16 35, auto;
+  cursor: url(images/cursor_hover.png) 16 35, auto;
   /* border: 5px solid transparent;
-  text-decoration: none; */  }
+  text-decoration: none; */
+}
 
-  a:active {
-    cursor: url(images/cursor_small.png) 16 35, auto;
-
+a:active {
+  cursor: url(images/cursor_small.png) 16 35, auto;
 }
 
 a:hover {
@@ -70,41 +87,31 @@ a:hover {
 }
 
 a:active {
-cursor: url(images/cursor_inverse.png) 16 35, auto;}
-
-#main {
-  /* pointer-events: none; */
+  cursor: url(images/cursor_inverse.png) 16 35, auto;
 }
 
-#current {
-  position: absolute;
-  left: 412px;
-  top: 275px;
+/* #current {
+float: left;
 }
 
 #submit {
-  position: absolute;
-  left: 205px;
-  top: 495px;
+float: left;
 }
 
 #about {
-  position: absolute;
-  left: 602px;
-  top: 187px;
+float: left;
 }
 
 #archive {
-  position: absolute;
-  left: 148px;
-  top: 172px;
+float: left;
 }
 
 #symptom {
-  position: absolute;
-  left: 448px;
-  top: 568px;
+float: left;
 }
+
+#main {
+clear:both;} */
 
 aside {
   z-index: 100;
@@ -160,14 +167,14 @@ aside {
   border-radius: 0px 25px 25px 25px;
 }
 
-.tabtext a{
- color:#fff;
- text-shadow: 2px 2px #000;
+.tabtext a {
+  color: #fff;
+  text-shadow: 2px 2px #000;
 }
 
 .tabtext {
   font-family: 'Inconsolata', monospace;
-  color:#fff;
+  color: #fff;
   margin-top: 20px;
   font-weight: 700;
   font-size: 30px;
@@ -182,9 +189,9 @@ aside {
   -o-transform: skew(-10deg);
 }
 
-.tabtextbehind a{
- color:#fff;
- text-shadow: 2px 2px #000;
+.tabtextbehind a {
+  color: #fff;
+  text-shadow: 2px 2px #000;
 }
 
 .tabtextbehind {
@@ -218,7 +225,7 @@ aside {
 }
 
 .content {
-  height:390px;
+  height: 390px;
   font-size: 16px;
   line-height: 24px;
   position: relative;
@@ -231,7 +238,7 @@ aside {
   border-radius: 5px 5px 0px 0px;
 }
 
-p{
+p {
   margin-bottom: 10px;
 }
 
@@ -245,7 +252,7 @@ p{
 
 h4 {
   font-size: 24px;
- color: #2FB847;
+  color: #2FB847;
   text-shadow: 2px 2px #fff;
 }
 
@@ -262,6 +269,64 @@ h6 {
   font-size: 16px;
   margin-bottom: 20px;
 }
+
+nav {
+  margin: auto;
+  width: 80%;
+}
+
+.column1 {
+  margin-top: 7%;
+  float: left;
+  width: 20%;
+}
+
+/* .column1 ul {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  padding-top: 3rem;
+  padding-bottom: .5rem;
+} */
+
+.column1 ul li {
+  list-style-type: none;
+  margin-bottom: 5rem;
+}
+
+
+
+.column2 {
+  float: left;
+  width: 60%;
+}
+
+.column3 {
+  margin-top: 7%;
+  float: left;
+  width: 20%;
+}
+
+/* .column3 ul {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  padding-top: 3rem;
+  padding-bottom: .5rem;
+} */
+
+.column3 ul li {
+  list-style-type: none;
+  margin-bottom: 3rem;
+}
+
+main {
+  /* float: left; */
+}
+
+/* .responsive {
+
+} */
 
 footer {
   text-align: center;
