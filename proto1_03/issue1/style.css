@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* start all css with a reset */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background-image: url("grey-world-animated.gif");
+  background-repeat: repeat; ;
+}
+
+header {
+  top:0px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  height: 70px;
+  background: rgba(226, 74, 211, 0.7);
+  border-bottom: solid 1px black;
+  box-shadow: 4px 4px 14px #000;
+}
+
+a {
+  color: #0033ff;
+}
+
+h1 {
+  margin-top:10px;
+  text-align: center;
+  font-size: 33px;
+  font-family: 'Libre Barcode 39 Text';
+}
+
+a:hover {
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 2600px;
+  height: 1600px;
+  margin-top: 120px;
+  padding-left:50px;
+  padding-right:50px;
+  margin-bottom: 50px;
+}
+
+iframe.marx {
+  border-radius: 12px;
+  box-shadow: 4px 4px 14px #000;
+  background: rgba(255, 255, 255, 0.86);
+  padding:10px;
+  position: absolute;
+  left: 700px;
+  top: 150px;
+}
+
+iframe.harmonize {
+  border-radius: 12px;
+  box-shadow: 4px 4px 14px #000;
+  background: rgba(255, 255, 255, 0.86);
+  padding:10px;
+  position: absolute;
+  left: 300px;
+  top: 1000px;
+}
+
+iframe.mansplain {
+  border-radius: 12px;
+  box-shadow: 4px 4px 14px #000;
+  background: rgba(255, 255, 255, 0.86);
+  padding:10px;
+  position: absolute;
+  left: 1600px;
+  top: 150px;
+}
+
+iframe.surveillance {
+  border-radius: 12px;
+  box-shadow: 4px 4px 14px #000;
+  background: rgba(255, 255, 255, 0.86);
+  padding:10px;
+  position: absolute;
+  left: 650px;
+  top: 620px;
+}
+
+iframe.quiz {
+  border-radius: 12px;
+  box-shadow: 4px 4px 14px #000;
+  background: rgba(255, 255, 255, 0.86);
+  padding:10px;
+  position: absolute;
+  left: 1300px;
+  top: 1000px;
+   transform: scale(0.9);
+
+}
+
+.kate{
+     margin-top:20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.abc {
+    width:300px;
+    overflow-x:scroll;
+}
+#viewContainer {
+    height:90px;
+    width:1100px;
+    display:table;
+}
+.page {
+    width:300px;
+    height:100%;
+    display:table-cell;
+    border:1px solid red;
+}

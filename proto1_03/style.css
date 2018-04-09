@@ -15,6 +15,7 @@ body {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  color: white;
 }
 
 body:active {
@@ -23,19 +24,25 @@ body:active {
 
 .responsive {
   width: 100%;
-  max-width: 1800px;
+  max-width: 1300px;
   height: auto;
 }
 
-.responsive_icon {
+.responsive_icon{
   max-width: 100%;
-  max-height: 80%
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 300px rgba(0, 0, 0, 1);
   border-radius: 20px;
   padding-top: 3rem;
   padding-bottom: .5rem;
+}
+
+.responsive_icon_bottom {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  padding-top: 3rem;
 }
 
 .responsive_title {
@@ -45,18 +52,55 @@ body:active {
   height: auto;
 }
 
+.item1 {
+  grid-area: header;
+}
+
+.item2 {
+  grid-area: left;
+
+}
+
+.item2 ul li{
+    margin-bottom: 5.5rem;
+}
+
+.item3 {
+  grid-area: main;
+}
+
+.item4 {
+  grid-area: right;
+}
+
+.item4 ul li{
+    margin-bottom: 3rem;
+}
+
+.item5 {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 'header header header header header header' 'left main main main main right' 'footer footer footer footer footer footer';
+  grid-gap: 5px;
+}
+
+.grid-container ul {
+  list-style-type: none;
+}
+
+.grid-container>div {
+  text-align: center;
+  font-size: 30px;
+}
+
 .outer {
   display: table;
   position: absolute;
   height: 100%;
   width: 100%;
-}
-
-.verticalcenter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%)
 }
 
 .middle {
@@ -274,58 +318,6 @@ nav {
   margin: auto;
   width: 80%;
 }
-
-.column1 {
-  margin-top: 7%;
-  float: left;
-  width: 20%;
-}
-
-/* .column1 ul {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 300px rgba(0, 0, 0, 1);
-  border-radius: 20px;
-  padding-top: 3rem;
-  padding-bottom: .5rem;
-} */
-
-.column1 ul li {
-  list-style-type: none;
-  margin-bottom: 5rem;
-}
-
-
-
-.column2 {
-  float: left;
-  width: 60%;
-}
-
-.column3 {
-  margin-top: 7%;
-  float: left;
-  width: 20%;
-}
-
-/* .column3 ul {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 300px rgba(0, 0, 0, 1);
-  border-radius: 20px;
-  padding-top: 3rem;
-  padding-bottom: .5rem;
-} */
-
-.column3 ul li {
-  list-style-type: none;
-  margin-bottom: 3rem;
-}
-
-main {
-}
-
-/* .responsive {
-
-} */
 
 footer {
   text-align: center;
