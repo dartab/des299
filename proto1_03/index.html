@@ -20,7 +20,14 @@
         <main>
 
           <div class="grid-container">
-            <div class="item1">Alien WebMD</div>
+
+            <div class="item1">
+              <picture>
+                <source srcset="images/title_stacked.gif" media="(max-width: 500px)">
+                <source srcset="images/title_black_smaller.gif">
+                <img src="images/title_black.gif" class="responsive_title">
+              </picture>
+            </div>
 
             <div class="item2">
               <ul>
@@ -32,12 +39,11 @@
 
             <div class="item3">
               <picture>
-                <source srcset="images/archive-bw.png" media="(max-width: 500px)">
+                <source srcset="images/blank.gif" draggable="false" media="(max-width: 500px)">
                 <source srcset="images/hotspring.png" media="(max-width: 1250px)">
                 <source srcset="images/main1.png">
                 <img src="images/main1.png" class="responsive">
               </picture>
-              <!-- <img draggable="false" src="images/main1.png" alt="alien webmd" id="main" class="responsive" /> -->
             </div>
 
             <div class="item4">
