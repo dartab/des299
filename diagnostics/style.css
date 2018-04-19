@@ -1,12 +1,13 @@
 /* how to prevent scrollbar? maybe only on FF */
 
 html {
-  margin: auto;}
+  margin: auto;
+}
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
   html {
   overflow: hidden;
-  }
+  } */
 
 body {
   /* Location of the image */
@@ -29,13 +30,13 @@ body {
   /* Set a background color that will be displayed
      while the background image is loading */
   background-color: #464646;
-
+  /* overflow: auto; */
 }
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
   body {
   overflow: hidden;
-  }
+  } */
 
 header{
   text-align: center;
@@ -113,8 +114,7 @@ button#clearButton {
 
 button#clearButton:hover {
         background-color: #f2d7f9;
-        color: #6e4677;
-    }
+        color: #6e4677; }
 
 
 /* note that a gap appears in between the canvas elements since they are inline replaced elements */

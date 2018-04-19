@@ -196,3 +196,8 @@ var t = function(p) {
 
 var myp5 = new p5(s, 'canvascontainer');
 // new p5(t, 'canvascontainer');
+
+document.body.addEventListener("touchmove", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+}, false);
