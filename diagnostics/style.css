@@ -1,9 +1,12 @@
 /* how to prevent scrollbar? maybe only on FF */
 
 html {
-  margin: auto;
+  margin: auto;}
+
+@media screen and (max-width: 992px) {
+  html {
   overflow: hidden;
-}
+  }
 
 body {
   /* Location of the image */
@@ -26,8 +29,13 @@ body {
   /* Set a background color that will be displayed
      while the background image is loading */
   background-color: #464646;
-  overflow: hidden;
+
 }
+
+@media screen and (max-width: 992px) {
+  body {
+  overflow: hidden;
+  }
 
 header{
   text-align: center;
