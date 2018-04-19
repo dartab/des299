@@ -9,7 +9,7 @@
 }
 
 body {
-  cursor: url(images/cursor_small.png) 16 35, auto;
+  cursor: url(images/alien_cursor.png) 16 35, auto;
   background-color: #000;
   background-image: url(images/gifs/stars.gif);
   font-size: 16px;
@@ -18,73 +18,128 @@ body {
   color: white;
 }
 
+.submissions{
+    background-image: url(images/cubes1.gif);
+}
+
 body:active {
-  cursor: url(images/cursor_inverse.png) 16 35, auto;
+  cursor: url(images/alien_cursor_press.png) 16 35, auto;
 }
 
 .responsive {
-  width: 100%;
-  max-width: 1250px;
+  width: 99%;
+  max-width: 1500px;
   height: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 300px rgba(0, 0, 0, .7);
+  border-radius: 20px;
 }
 
-.responsive_icon{
+.responsive a:hover {
+  background-image: url(images/brightstars.gif);
+}
+
+.responsive_icon_left {
   max-width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 300px rgba(0, 0, 0, 1);
   border-radius: 20px;
-  padding-bottom: 2rem;
+  transition-duration: 1s;
+  transition: all 1s ease-out;
 }
 
-.responsive_icon_bottom {
+.responsive_icon_left:hover {
+  -ms-transform: rotate(20deg);
+  /* IE 9 */
+  -webkit-transform: rotate(20deg);
+  /* Safari */
+  transform: rotate(20deg);
+  /* Standard syntax */
+}
+
+.responsive_icon_right {
   max-width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 300px rgba(0, 0, 0, 1);
   border-radius: 20px;
-  padding-top: 2rem;
-  padding-bottom: 0;
+  transition-duration: 1s;
+  transition: all 1s ease-out;
+}
+
+.responsive_icon_right:hover {
+  -ms-transform: rotate(20deg);
+  /* IE 9 */
+  -webkit-transform: rotate(20deg);
+  /* Safari */
+  transform: rotate(-20deg);
+  /* Standard syntax */
 }
 
 .responsive_title {
-  margin-top: 4rem;
-  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
   height: auto;
+  padding: .5rem .5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 300px rgba(0, 0, 0, .7);
+  border-radius: 20px;
+}
+
+.responsive_title:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+background-image: url(images/brightstars.gif);
 }
 
 .item1 {
   grid-area: header;
-  margin-top: -2rem;
   margin-bottom: 3rem;
 }
 
 .item2 {
   grid-area: left;
-
 }
 
-.item2 ul li{
-    margin-bottom: 5.5rem;
+.item2 ul li {
+  /* margin-bottom: 5.5rem; */
 }
+
 
 .item3 {
   grid-area: main;
 }
 
+/* .item3:hover{
+} */
+
 .item4 {
+
   grid-area: right;
 }
 
-.item4 ul li{
+.item4 ul li {
+  /* margin-bottom: 3rem; */
+}
+
+.lefticons{
+    margin-bottom: 5.5rem;
+}
+
+.righticons{
     margin-bottom: 3rem;
 }
 
-.item5 {
-  grid-area: footer;
+.bottomicons{
+  margin-bottom: 0;
 }
+
+/* .item5 {
+  grid-area: footer;
+} */
 
 .grid-container {
   display: grid;
-  grid-template-areas: 'header header header header header header' 'left main main main main right' 'footer footer footer footer footer footer';
+  grid-template-areas: 'header header header header header header' 'left main main main main right';
+  /* 'footer footer footer footer footer footer' */
   grid-gap: 5px;
 }
 
@@ -118,53 +173,27 @@ body:active {
 
 a {
   color: #ef3c31;
-  cursor: url(images/cursor_hover.png) 16 35, auto;
+  /* cursor: url(images/alien_cursor_hover.png) 16 35, auto; */
   /* border: 5px solid transparent;
   text-decoration: none; */
 }
 
-a:active {
-  cursor: url(images/cursor_small.png) 16 35, auto;
-}
-
 a:hover {
-  cursor: url(images/cursor_hover.png) 16 35, auto;
+  cursor: url(images/alien_cursor_hover.png) 16 35, auto;
 }
 
 a:active {
-  cursor: url(images/cursor_inverse.png) 16 35, auto;
+  cursor: url(images/alien_cursor_press.png) 16 35, auto;
 }
-
-/* #current {
-float: left;
-}
-
-#submit {
-float: left;
-}
-
-#about {
-float: left;
-}
-
-#archive {
-float: left;
-}
-
-#symptom {
-float: left;
-}
-
-#main {
-clear:both;} */
 
 aside {
   z-index: 100;
   color: #000;
   font-size: 20px;
-  position: absolute;
-  top: 230px;
-  left: 20px;
+  /* position: relative; */
+  margin-top: 70px;
+margin-left: auto;
+margin-right:auto;
   width: 900px;
   height: 530px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -175,7 +204,7 @@ aside {
 }
 
 .tab {
-  position: absolute;
+  position: relative;
   top: -71px;
   left: -1px;
   width: 300px;
@@ -190,8 +219,8 @@ aside {
 
 .tab1 {
   position: absolute;
-  top: -70px;
-  left: 303px;
+  margin-top: -70px;
+  margin-left: 303px;
   width: 300px;
   height: 70px;
   background-color: rgba(255, 255, 255, 0.4);
@@ -204,8 +233,8 @@ aside {
 
 .line {
   position: absolute;
-  top: 0px;
-  left: 300px;
+  margin-top: 0px;
+  margin-left: 300px;
   width: 600px;
   height: 500px;
   border-top: 1px solid white;
@@ -274,7 +303,7 @@ aside {
   font-size: 16px;
   line-height: 24px;
   position: relative;
-  margin-top: 30px;
+  margin-top: -38px;
   margin-left: 30px;
   margin-right: 30px;
   padding: 20px;

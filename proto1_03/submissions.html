@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alien WebMD: a collaborative webzine</title>
+  <link href="style1.css" rel="stylesheet" />
+  <!-- <script src='script.js' type="text/javascript"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Inconsolata" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+
+        <div class="grid-container">
+
+          <div class="item1">
+            <a href="index.html">
+              <picture>
+                <source srcset="images/title_stacked.gif" media="(max-width: 500px)">
+                <source srcset="images/title_black_smaller.gif">
+                <img src="images/title_black.gif" draggable="false" class="responsive_title" alt="Alien WebMD">
+              </picture>
+            </a>
+          </div>
+
+          <div class="item2">
+            <ul>
+              <li class="lefticons"><a href="#"><img draggable="false" src="images/gifs/info4.gif" alt="submit art" class="responsive_icon_left" /></a></li>
+              <li class="lefticons"><a href="#"><img draggable="false" src="images/gifs/news.gif" alt="symptom checker" class="responsive_icon_left" /></a></li>
+              <li class="bottomicons"><a href="#"><img draggable="false" src="images/gifs/doctor1.gif" alt="about" class="responsive_icon_left" /></a></li>
+            </ul>
+          </div>
+
+          <div class="item3">
+
+            <div class="tab">
+              <div class="tabtext"><a href="#">Submit Art</a></div>
+            </div>
+
+
+
+            <aside>  <div class="line"></div>
+              <img src="images/blank1.gif">
+              <div class="content">
+                <h4>1st Issue / Late Capitalism: Symptoms, Management, & Interventions</h4>
+                <h5>Submissions due May 10, 2018</h5>
+                <p><strong>We are interested in collecting images, video, audio, writings, and ideas for creating an zine issue that addresses issues in late capitalism.</strong> This theme allows for a broad array of thematic content - you may submit any
+                  material that addresses your anxieties about the present/future, the violent history of the development of the modern world, and injustices you would like to address. What kinds of coping mechanisms do you use? Submissions can also take
+                  a constructive approach to bringing up theories and methods for addressing inequalities and strategies for structural change. Your submissions may also capture the "essence" of this late capitalist stage in its vernacular, imagery and
+                  language. Perhaps there are aspects you would like to celebrate. Send them in!</p>
+
+
+                <div id="submitart">
+
+                  <h6>CONTRIBUTE!</h6>
+
+                  <form action="mailto:alienwebmd@gmail.com" method="post" enctype="text/plain">
+
+                    <label for="title"><span class="submitfields">Submission title</span></label>
+                    <input type="text" id="title" name="Submision title ">
+
+                    <label for="submissiontype"><span class="submitfields">Submission type</span></label>
+                    <p>Please note file types should be web-compatible, or they may be modified for display (for example, Word documents will be adapted into HTML, and too-large images may be optimized and resized).</p>
+                    <select id="submissiontype" name="Submission type ">
+                        <option value="image">Image</option>
+                        <option value="gif">Animated Gif</option>
+                        <option value="vido">Video</option>
+                        <option value="audio">Audio</option>
+                        <option value="writing">Writing</option>
+                        <option value="other">Other</option>
+                      </select>
+
+                    <label for="work"><span class="submitfields">Describe your work and how it relates to the zine issue’s theme:</span>
+                      </label>
+                    <input type="text" id="work" name="Describe your work ">
+
+                    <label for="link"><span class="submitfields">Submission link</span></label>
+                    <p>Please copy and paste the link to your work. If it is stored on Google Drive, be sure its sharing settings are set to “Anyone with the link can view”. If your work is not online, please attach it to this email.</p>
+                    <input type="text" id="link" name="Submission link ">
+
+                    <h6>CREDITING</h6>
+
+                    <label for="name"><span class="submitfields">Name</span></label>
+                    <p>(You may remain anonymous if you wish.)</p>
+                    <input type="text" id="name" name="Your name ">
+
+                    <label for="crediting"><span class="submitfields">How else do you want your work credited?</span></label>
+                    <p>Email, social media handles, website address, etc.</p>
+                    <input type="text" id="crediting" name="How else do you want your work credited? ">
+
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+
+                  </form>
+
+                </div>
+
+                <div class="closetext"><a href="index.html">Close</a></div>
+              </div>
+
+
+
+            </aside>
+
+          </div>
+
+          <div class="item4">
+            <ul>
+              <li class="righticons"><a href="#"><img draggable="false" src="images/gifs/art.gif" alt="submit art" class="responsive_icon_right" /></a></li>
+              <li class="righticons"><a href="#"><img draggable="false" src="images/gifs/filecabinet1.gif" alt="archive" class="responsive_icon_right" /></a></li>
+              <li class="bottomicons"><a href="#"><img draggable="false" src="images/gifs/email1.gif" alt="symptom checker" class="responsive_icon_right" /></a></li>
+            </ul>
+          </div>
+
+          <div class="item5"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
