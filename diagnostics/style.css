@@ -2,13 +2,14 @@
 
 html {
   margin: auto;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 900px) and (min-height: 700px) {
+/* @media only screen and (max-width: 900px) and (min-height: 700px) {
     html {
         overflow: hidden;
     }
-}
+} */
 
 body {
   /* Location of the image */
@@ -31,13 +32,14 @@ body {
   /* Set a background color that will be displayed
      while the background image is loading */
   background-color: #464646;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 900px) and (min-height: 700px) {
+/* @media only screen and (max-width: 900px) and (min-height: 700px) {
     body {
         overflow: hidden;
     }
-}
+} */
 
 header{
   text-align: center;
