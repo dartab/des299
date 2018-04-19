@@ -2,7 +2,9 @@
 
 html {
   margin: auto;
-  overflow:hidden;
+  overflow: hidden;
+  position: relative;
+   height: 100%;
 }
 
 body {
@@ -26,7 +28,9 @@ body {
   /* Set a background color that will be displayed
      while the background image is loading */
   background-color: #464646;
-  overflow:hidden;
+  overflow: hidden;
+  position: relative;
+   height: 100%;
 
 }
 
