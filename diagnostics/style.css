@@ -2,7 +2,6 @@
 
 html {
   margin: auto;
-  height: 100%;
 }
 
 /* @media only screen and (max-width: 900px) and (min-height: 700px) {
@@ -33,7 +32,6 @@ body {
      while the background image is loading */
   background-color: #464646;
 
-  height: 100%;
 }
 
 /* @media only screen and (max-width: 900px) and (min-height: 700px) {
