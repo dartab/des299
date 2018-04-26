@@ -2,6 +2,8 @@
 
 html {
   margin: auto;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* @media only screen and (max-width: 900px) and (min-height: 700px) {
@@ -11,6 +13,10 @@ html {
 } */
 
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
   /* Location of the image */
   background-image: url("images/bg1.png");
