@@ -17,12 +17,12 @@ firebase.initializeApp(config);
 database = firebase.database();
 
 
-document.addEventListener('touchstart', function(event) {
-  event.preventDefault();
-  event.stopPropagation();
-},
-{passive: false}
-);
+// document.addEventListener('touchstart', function(event) {
+//   event.preventDefault();
+//   event.stopPropagation();
+// },
+// {passive: false}
+// );
 
 // empty canvas in which to draw
 var s = function(p) {
