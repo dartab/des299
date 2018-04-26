@@ -81,6 +81,7 @@ var s = function(p) {
     isDrawing = true;
     currentPath = [];
     drawing.push(currentPath);
+    return false;
   }
 
   function endPath() {

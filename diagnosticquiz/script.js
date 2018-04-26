@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   console.log("DOM fully loaded and parsed");
 
   //capture the submit event
-  document.f.onsubmit = processForm;
+  document.diagnostics.onsubmit = processForm;
 
   //onreset
-  document.f.onreset = clearForm;
+  document.diagnostics.onreset = clearForm;
 
   //define process function
   function processForm() {
@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("message").style.display = 'block';
 
     //store q1 in a variable called q1
-    var q1 = document.f.q1.value;
+    var q1 = document.diagnostics.q1.value;
     // alert('Hi ' + userName);
 
     //store q2 in a variable called q2
-    var q2 = document.f.q2.value;
+    var q2 = document.diagnostics.q2.value;
 
     //store q2 in a variable called q2
-    var q3 = document.f.q3.value;
+    var q3 = document.diagnostics.q3.value;
 
 
     // capture the my Msg element

@@ -67,7 +67,7 @@ ul {
 .quiz-question {
   font-weight: bold;
   display: block;
-  padding: 30px 0 10px 0;
+  padding: 40px 0 30px 0;
   margin: 0;
 }
 
@@ -99,13 +99,16 @@ form{
   border-bottom: 1px dashed transparent;
 }
 
+.quiz-answer-emoji{
+    display: inline;
+    padding: 34px;
+}
+
+.quiz-emoji{
+  padding-bottom: 30px;
+}
+
 .quiz-answer:hover {
-  background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color: #ef8700;
   text-decoration: underline;
 }
@@ -131,30 +134,41 @@ input[type="radio"] {
 
 input[type="radio"]+label {
   position: relative;
-  padding: 0 0 0 25px;
+  padding: 20px;
   font-size: 16px;
   line-height: 25px;
   margin: 0 0 10px 0;
   cursor: pointer;
+  margin-left: -15px;
 }
 
 input[type="radio"]+label:before {
-  content: "";
-  display: block;
+  /* content: ""; */
+  display: none;
+  /* display: block;
   position: absolute;
   top: 1px;
   height: 15px;
   width: 15px;
   background: white;
   border: 2px solid #18562e;
-  border-radius: 10px;
+  border-radius: 10px; */
   cursor: pointer;
+
 }
 
 input[type="radio"]:checked+label:before {
   background: #ef8700;
   cursor: pointer;
 }
+
+input[type="radio"]:checked+label {
+  color: #ef8700;
+  text-decoration: underline;
+  cursor: pointer;
+    background: white;
+}
+
 
 input[type=submit] {
   float: left;
@@ -213,10 +227,12 @@ input[type=reset]:hover {
 
 .column1{
   float: left;
+  width: 50%;
 }
 
 .column2{
   float: left;
+  width: 50%;
 }
 
 .buttons{

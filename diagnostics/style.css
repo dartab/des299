@@ -2,10 +2,7 @@
 
 html {
   margin: auto;
-  overflow: hidden;
   height: 100%;
-  width: 100%;
-  position: fixed;
 }
 
 /* @media only screen and (max-width: 900px) and (min-height: 700px) {
@@ -35,10 +32,8 @@ body {
   /* Set a background color that will be displayed
      while the background image is loading */
   background-color: #464646;
-  overflow: hidden;
+
   height: 100%;
-  width: 100%;
-  position: fixed;
 }
 
 /* @media only screen and (max-width: 900px) and (min-height: 700px) {
