@@ -28,6 +28,10 @@ var s = function(p) {
     canvas.mousePressed(p.startPath);
     canvas.parent('canvascontainer');
     canvas.mouseReleased(endPath);
+    
+    canvas.touchMoved( function() {
+      console.log("touchmoved");
+    });
 
     var saveButton = p.select('#saveButton');
     saveButton.mousePressed(p.saveDrawing);
@@ -81,7 +85,6 @@ var s = function(p) {
     isDrawing = true;
     currentPath = [];
     drawing.push(currentPath);
-    return false;
   }
 
   function endPath() {
